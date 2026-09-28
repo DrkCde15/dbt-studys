@@ -1,0 +1,11 @@
+id,name,email,country,created_at
+1,Ana Silva,ana.silva@example.com,BR,2024-01-15
+2,Carlos Souza,carlos.souza@example.com,BR,2024-02-03
+3,Maria Oliveira,maria.oliveira@example.com,PT,2024-02-20
+4,Joao Santos,joao.santos@example.com,BR,2024-03-10
+5,Fernanda Lima,fernanda.lima@example.com,BR,2024-03-25
+6,Pedro Costa,pedro.costa@example.com,PT,2024-04-05
+7,Juliana Pereira,juliana.pereira@example.com,BR,2024-04-18
+8,Rafael Almeida,rafael.almeida@example.com,US,2024-05-02
+9,Camila Rocha,camila.rocha@example.com,BR,2024-05-20
+10,Thiago Martins,thiago.martins@example.com,BR,2024-06-01

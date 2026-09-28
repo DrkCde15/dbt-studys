@@ -1,0 +1,40 @@
+
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_users
+    description: "Staging de users a partir do seed"
+    columns:
+      - name: id
+        description: "Chave primaria"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: users_by_country
+    description: "Agregado de usuarios por pais"
+    columns:
+      - name: country
+        description: "Pais"
+        data_tests:
+          - not_null
+      - name: n_users
+        description: "Total de usuarios"

@@ -1,0 +1,20 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pycache/
+
+# Env (credenciais locais, nao commitar)
+.env
+
+# dbt
+target/
+dbt_packages/
+logs/
+*.log
+.snowflake/
+.dbt/
+
+# Sistema
+.DS_Store
