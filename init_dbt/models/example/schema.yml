@@ -38,3 +38,28 @@ models:
           - not_null
       - name: n_users
         description: "Total de usuarios"
+
+  - name: stg_orders
+    description: "Staging de orders a partir do seed"
+    columns:
+      - name: order_id
+        description: "Chave primaria do pedido"
+        data_tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: "FK para stg_users"
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_users')
+              field: id
+
+  - name: orders_by_user
+    description: "LTV e n de pedidos por usuario"
+    columns:
+      - name: user_id
+        description: "Chave primaria"
+        data_tests:
+          - unique
+          - not_null

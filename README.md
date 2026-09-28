@@ -72,9 +72,32 @@ con = psycopg2.connect(host="localhost", port=5432, dbname="dbt_estudos",
 .
 ├── .env            # credenciais locais (ignorado pelo git)
 ├── init_dbt/       # projeto dbt (profile: init_dbt)
-│   ├── seeds/users.csv
+│   ├── seeds/
+│   │   ├── users.csv    # 10 usuarios
+│   │   └── orders.csv   # 16 pedidos
 │   └── models/example/
-│       ├── stg_users.sql
-│       └── users_by_country.sql
+│       ├── stg_users.sql        # select * from {{ ref('users') }}
+│       ├── stg_orders.sql       # select * from {{ ref('orders') }}
+│       ├── users_by_country.sql # agregado por pais
+│       ├── orders_by_user.sql   # join users+orders (n_orders, ltv)
+│       └── schema.yml           # testes unique/not_null/relationships
 └── .venv/          # ambiente Python (ignorado pelo git)
 ```
+
+## Modelos e linhagem
+
+```
+users.csv ──> stg_users ──┬──> users_by_country
+orders.csv ──> stg_orders ─┴──> orders_by_user
+```
+
+Testes: `unique`/`not_null` em PKs, `relationships` em `stg_orders.user_id → stg_users.id`.
+
+## Exercicios feitos
+
+- [x] Seed + staging (`stg_users`, `stg_orders`)
+- [x] Agregacao (`users_by_country`)
+- [x] Join + LTV (`orders_by_user`)
+- [ ] `users_by_month` com `date_trunc`
+- [ ] Snapshot SCD2
+- [ ] `dbt docs serve`
