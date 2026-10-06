@@ -1,6 +1,9 @@
 # dbt-estudos
 
-Estudos de dbt + Postgres (via Podman).
+Trilha pratica de estudos em dbt com Postgres via Podman: do `dbt debug` ao `dbt build`.
+Seeds de usuarios e pedidos, staging com `ref()`, marts com agregacoes e join de LTV,
+testes de qualidade (`unique`, `not_null`, `relationships`), e na sequencia
+materializacoes, snapshots SCD2, macros, docs e orquestracao.
 
 ## Pre-requisitos
 
