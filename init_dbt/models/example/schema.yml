@@ -63,3 +63,14 @@ models:
         data_tests:
           - unique
           - not_null
+
+  - name: users_by_month
+    description: "Agregado de usuarios por mes de cadastro"
+    columns:
+      - name: month
+        description: "Primeiro dia do mes"
+        data_tests:
+          - unique
+          - not_null
+      - name: n_users
+        description: "Total de usuarios"
